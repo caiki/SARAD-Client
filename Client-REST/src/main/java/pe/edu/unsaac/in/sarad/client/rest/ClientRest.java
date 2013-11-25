@@ -15,6 +15,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONObject;
+import pe.edu.unsaac.in.sarad.client.model.Professor;
 public class ClientRest {
     
     public static void main(String[] args) throws ClientProtocolException, IOException {
@@ -22,7 +23,7 @@ public class ClientRest {
     }
     public static void GetMethod( ) throws ClientProtocolException, IOException {
         HttpClient client = new DefaultHttpClient();
-        HttpGet request = new HttpGet("http://restUrl");
+        HttpGet request = new HttpGet("http://localhost:8080/RESTfulExample/json/product/get");//
         HttpResponse response = client.execute(request);
         BufferedReader rd = new BufferedReader (new InputStreamReader(response.getEntity().getContent()));
         String line = "";
@@ -33,7 +34,7 @@ public class ClientRest {
     
      public static void PostMethod () throws ClientProtocolException, IOException {
         HttpClient client = new DefaultHttpClient();
-        HttpPost post = new HttpPost("http://restUrl");
+        HttpPost post = new HttpPost("http://localhost:8080/RESTfulExample/json/product/post");
         //For JSON you can use JSONObject to create string representation of JSON.
         JSONObject json = new JSONObject();
         json.put("name1", "value1");
@@ -49,7 +50,6 @@ public class ClientRest {
             System.out.println(line);
         }
     }   
-   
-
 }
+
 //Fuente>http://harryjoy.com/tag/apache/
