@@ -10,6 +10,7 @@
     <module>Client-UI</module>
     <module>Client-REST</module>
     <module>Client-Fingerprint</module>
+    <module>Client-Comun</module>
   </modules>
   <dependencies>
     <dependency>

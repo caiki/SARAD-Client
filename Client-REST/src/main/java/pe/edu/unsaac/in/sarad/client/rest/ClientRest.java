@@ -15,7 +15,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONObject;
-import pe.edu.unsaac.in.sarad.client.model.Professor;
 public class ClientRest {
     
     public static void main(String[] args) throws ClientProtocolException, IOException {
@@ -51,5 +50,3 @@ public class ClientRest {
         }
     }   
 }
-
-//Fuente>http://harryjoy.com/tag/apache/

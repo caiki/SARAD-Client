@@ -2,7 +2,6 @@
 package pe.edu.unsaac.in.sarad.client.model;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 import java.io.Serializable;
 //import org.json;
 
