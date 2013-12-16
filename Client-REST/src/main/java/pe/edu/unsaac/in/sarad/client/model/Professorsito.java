@@ -5,7 +5,7 @@ import com.google.gson.Gson;
 import java.io.Serializable;
 //import org.json;
 
-public class Professor implements Serializable{
+public class Professorsito implements Serializable{
     protected String p_name;
     protected String p_code;
     
@@ -24,27 +24,27 @@ public class Professor implements Serializable{
     public void setName(String value) {
         this.p_name = value;
     }
-//    public JsonElement prof_toJson(Professor Pprof){
+//    public JsonElement prof_toJson(Professorsito Pprof){
 //       
 //    Gson gson = new Gson();        
 //    //System.out.println(gson.toJson(prof));
 //        return gson.toJsonTree(Pprof);
 //    }
-    public Professor prof_fromJson(String valuejson){
+    public Professorsito prof_fromJson(String valuejson){
     Gson gson = new Gson();
-    Professor prof1 = (Professor) gson.fromJson(valuejson, Professor.class);    
+    Professorsito prof1 = (Professorsito) gson.fromJson(valuejson, Professorsito.class);    
     return prof1;
    }
- 
+ /*
     public static void main(String[] args) {
     String json = "{\"p_name\":\"Unai\",\"p_code\":28}";
-    Professor prof = new Professor();
+    Professorsito prof = new Professorsito();
     prof =prof.prof_fromJson(json);
     System.out.println("prof.getCode()>"+prof.getCode()+"prof.getName()>"+prof.getName());
     
 //    JsonElement je= prof.prof_toJson(prof);
 //    je.getAsString();
-    }
+    }*/
 }
 //Consulta sera necesario que cree una clase persona que heredara a otras
 //Crear un mediador

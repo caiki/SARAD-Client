@@ -4,7 +4,7 @@ package pe.edu.unsaac.in.sarad.client.model;
 import java.text.DateFormat;
 import java.util.Date;
 
-public class Person {
+public class Personsito {
     
     private String Nombre;
     private String ApellidoPaterno;

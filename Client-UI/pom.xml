@@ -21,5 +21,10 @@
             <artifactId>Client-Comun</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>Client-REST</artifactId>
+      <version>${project.version}</version>
+    </dependency>
   </dependencies>
 </project>
