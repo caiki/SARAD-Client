@@ -29,14 +29,12 @@ public class MySQLDAOProfessor implements DAOProfessor {
             conn = new DBConfig().getConnection();
             //Paso 3: Preparamos la sentencia
             pstmt = conn.prepareStatement(
-                    "INSERT INTO Professor(id, name, lastName,secondLastName, address, section)"+
-                    "VALUES(?,?,?,?,?,?)");
+                    "INSERT INTO Docente (id, name, Categoria,Nombre,Especialidad)"+
+                    "VALUES(?,?,?,?)");
             pstmt.setString(1, p.getId());
-            pstmt.setString(2, p.getName());
-            pstmt.setString(3, p.getLastName());
-            pstmt.setString(4, p.getSecondLastName());
-            pstmt.setString(5, p.getAddress());
-            pstmt.setString(6, p.getSection());
+            pstmt.setString(2, p.getCategoria());
+            pstmt.setString(3, p.getName());
+            pstmt.setString(4, p.getEspecialidad());
             //Paso 4: Ejecutar la sentencia
             pstmt.executeUpdate();
         } catch (SQLException ex) {
@@ -69,23 +67,20 @@ public class MySQLDAOProfessor implements DAOProfessor {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             //Paso 2: Obtenemos la conexión
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://quilla.lab.inf.pucp.edu.pe:3306/inf282g9",
-                    "inf282g9", "madrugada");
+                    "jdbc:mysql://diagonal.com.pe:3306/diagorfe_sarad",
+                    "diagorfe_ingsoft", "$arad_1ng$0ft");
             //Paso 3: Preparamos la sentencia
             pstmt = conn.prepareStatement(
-                    "SELECT * FROM Professor");
+                    "SELECT * FROM Docente");
             //Paso 4: Ejecutar la sentencia            
             rs = pstmt.executeQuery();
             //Paso 4 y medio: Evaluamos los resultados
             while (rs.next()){
-                String id = rs.getString("ID");
-                String name = rs.getString("name");
-                String lName = rs.getString("lastName");
-                String slName = rs.getString("secondLastName");
-                String address = rs.getString("address");
-                String section = rs.getString("section");
-                Professor p = new Professor("11111111", name, lName, slName, 
-                            address, "696969", null, id, section);
+                String id = rs.getString("idDocente");
+                String Categoria = rs.getString("Categoria");
+                String Name = rs.getString("Nombre");
+                String Especialidad = rs.getString("Especialidad");
+                Professor p = new Professor(id, Categoria, Name, Especialidad);
                 list.add(p);
             }
         } catch (SQLException ex) {

@@ -61,10 +61,10 @@ public class ERController {
                         rs.notifica();
 	}
 	
-	public static Professor searchProfessorByIdPUCP (String idPUCP){
+	public static Professor searchProfessorById (String id){
 		Professor p = null;
 		for (int i=0; i < professorList.size(); i++){
-			if (professorList.get(i).getId().equalsIgnoreCase(idPUCP)){
+			if (professorList.get(i).getId().equalsIgnoreCase(id)){
 				return professorList.get(i);
 			}
 		}
@@ -73,7 +73,7 @@ public class ERController {
         
                 public static void updateProfessor (Professor p) {
                     for (int i=0; i < professorList.size(); i++){
-                        if (professorList.get(i).getDni().equalsIgnoreCase(p.getDni())){
+                        if (professorList.get(i).getId().equalsIgnoreCase(p.getId())){
                             professorList.set(i, p);
                         }
                     }                    

@@ -34,14 +34,13 @@ public class SQLServerDAOProfessor implements DAOProfessor{
             String password = "inf282db";
             conn = DriverManager.getConnection(jdbcURL, user, password);
             //Paso 3: Preparar la sentencia
-           pstmt = conn.prepareStatement("INSERT INTO Professor "
-                   + "(DNI, Nombre, ApellidoPat, ApellidoMat, CodigoPUCP) "
-                   + "VALUES (?, ?,?,?,?)");
-            pstmt.setString(1, p.getDni());
-            pstmt.setString(2, p.getName());
-            pstmt.setString(3, p.getLastName());
-            pstmt.setString(4, p.getSecondLastName());
-            pstmt.setString(5, p.getId());
+            pstmt = conn.prepareStatement(
+                    "INSERT INTO Docente (id, name, Categoria,Nombre,Especialidad)"+
+                    "VALUES(?,?,?,?)");
+            pstmt.setString(1, p.getId());
+            pstmt.setString(2, p.getCategoria());
+            pstmt.setString(3, p.getName());
+            pstmt.setString(4, p.getEspecialidad());
             //Paso 4: Se ejecuta la sentencia
            int res = pstmt.executeUpdate();
            if (res == 0) {
@@ -69,7 +68,7 @@ public class SQLServerDAOProfessor implements DAOProfessor{
     public int delete(int id) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
+/*
     @Override
     public ArrayList<Professor> queryAll() {
         ArrayList<Professor> list = new ArrayList<Professor>();
@@ -87,7 +86,7 @@ public class SQLServerDAOProfessor implements DAOProfessor{
             String password = "inf282db";
             conn = DriverManager.getConnection(jdbcURL, user, password);
             //Paso 3: Preparar la sentencia
-           pstmt = conn.prepareStatement("SELECT * FROM Professor");
+           pstmt = conn.prepareStatement("SELECT * FROM Docente");
             
             //Paso 4: Se ejecuta la sentencia
            rs = pstmt.executeQuery();
@@ -114,10 +113,14 @@ public class SQLServerDAOProfessor implements DAOProfessor{
         }
         return list;
     }
-
+*/
     @Override
     public Professor queryById(int id) {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public ArrayList<Professor> queryAll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
