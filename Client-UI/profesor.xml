@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<professor dni="48152728">
-    <address>Los Florales</address>
-    <lastName>Paucar</lastName>
-    <name>Carlos Enrique</name>
-    <secondLastName>Farfan</secondLastName>
-    <telephoneNumber>456213</telephoneNumber>
-    <id>20133829</id>
-    <section>Informática</section>
+<professor>
+    <categoria></categoria>
+    <especialidad></especialidad>
+    <id>D001</id>
+    <name></name>
 </professor>

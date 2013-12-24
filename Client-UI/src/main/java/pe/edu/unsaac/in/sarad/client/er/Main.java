@@ -45,7 +45,7 @@ public class Main {
         
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
         Professor p = (Professor) jaxbUnmarshaller.unmarshal(file);
-        System.out.println(p.getDni() + "-" + p.getName() + " " + p.getLastName());
+        System.out.println(p.getId() + "-" + p.getName() + " " + p.getEspecialidad());
         /*
          * Set the Nimbus look and feel
          */
